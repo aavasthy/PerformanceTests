@@ -60,4 +60,75 @@
 - **Warmup Count**: 3  
 - **Mean**: 2.160 s  
 - **StdDev**: 0.011 s  
-- **Confidence Interval (99.9%)**: [2.118 s; 2.202 s]  
+- **Confidence Interval (99.9%)**: [2.118 s; 2.202 s]
+
+---
+
+# Benchmark Results
+
+#### Processor: AMD EPYC 7763, 1 CPU, 16 logical and 8 physical cores  
+#### Branch:  users/dkunda/4644_binary_encoding_for_point_ops  
+
+---
+
+## Summary Table
+
+|           Method        |        Job | IterationCount | LaunchCount | RunStrategy | WarmupCount |    Mean   |   Error |  StdDev |  Median  |   P95   |   Op/s  |   Gen0   | Allocated |
+|-------------------------|------------|----------------|-------------|-------------|-------------|-----------:|--------:|--------:|----------:|---------:|---------:|----------:|----------:|
+| **ReadItemsAsync**      | Job-GBWISA |              5 |           1 | Throughput  |           3 | 2,032.0 ms | 42.52 ms | 11.04 ms | 2,035.8 ms | 2,043.0 ms | 0.4921 | 1000.0000 | 22,963,432 B |
+| **QueryItemsAsync**     | Job-GBWISA |              5 |           1 | Throughput  |           3 |   321.8 ms | 20.31 ms |  3.14 ms |   323.1 ms |   323.7 ms | 3.1080 |     -     |   540,016 B |
+| **UpsertItemsAsync**    | Job-GBWISA |              5 |           1 | Throughput  |           3 | 2,435.5 ms | 22.70 ms |  5.89 ms | 2,436.8 ms | 2,441.8 ms | 0.4106 | 1000.0000 | 23,856,208 B |
+| **DeleteItemsAsync**    | Job-GBWISA |              5 |           1 | Throughput  |           3 | 2,300.2 ms | 77.18 ms | 20.04 ms | 2,290.1 ms | 2,326.7 ms | 0.4347 | 1000.0000 | 22,109,248 B |
+| **ReadItemsAsync**      | MediumRun  |             15 |           2 | Default     |          10 |      N/A   |     N/A  |     N/A  |      N/A   |     N/A   |     N/A  |     -     |        -   |
+| **QueryItemsAsync**     | MediumRun  |             15 |           2 | Default     |          10 |   143.2 ms | 46.75 ms | 67.05 ms |   196.9 ms |   210.7 ms | 6.9816 |     -     |   354,936 B |
+| **UpsertItemsAsync**    | MediumRun  |             15 |           2 | Default     |          10 | 2,308.2 ms |  7.65 ms | 11.22 ms | 2,306.0 ms | 2,330.6 ms | 0.4332 | 1000.0000 | 23,844,400 B |
+| **DeleteItemsAsync**    | MediumRun  |             15 |           2 | Default     |          10 | 2,254.6 ms | 57.15 ms | 83.77 ms | 2,264.3 ms | 2,401.9 ms | 0.4435 | 1000.0000 | 22,026,672 B |
+
+---
+
+## Detailed Results
+
+### **BinaryEncodingBenchmark.ReadItemsAsync**
+- **Job**: Job-GBWISA  
+- **Iteration Count**: 5  
+- **Warmup Count**: 3  
+- **Mean**: 2.032 s  
+- **StdDev**: 0.011 s  
+- **Confidence Interval (99.9%)**: [1.989 s; 2.075 s]  
+
+
+---
+
+### **BinaryEncodingBenchmark.QueryItemsAsync**
+- **Job**: Job-GBWISA  
+- **Iteration Count**: 5  
+- **Warmup Count**: 3  
+- **Mean**: 321.753 ms  
+- **StdDev**: 3.144 ms  
+- **Confidence Interval (99.9%)**: [301.439 ms; 342.067 ms]  
+
+---
+
+### **BinaryEncodingBenchmark.UpsertItemsAsync**
+- **Job**: Job-GBWISA  
+- **Iteration Count**: 5  
+- **Warmup Count**: 3  
+- **Mean**: 2.435 s  
+- **StdDev**: 0.006 s  
+- **Confidence Interval (99.9%)**: [2.413 s; 2.458 s]  
+
+
+---
+
+### **BinaryEncodingBenchmark.DeleteItemsAsync**
+- **Job**: Job-GBWISA  
+- **Iteration Count**: 5  
+- **Warmup Count**: 3  
+- **Mean**: 2.300 s  
+- **StdDev**: 0.020 s  
+- **Confidence Interval (99.9%)**: [2.223 s; 2.377 s]  
+
+
+
+
+
